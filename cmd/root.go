@@ -53,7 +53,7 @@ func Execute(ctx context.Context, version string) {
 	}
 }
 
-func createRootCommand(ctx context.Context, input *Input, version string) *cobra.Command {
+func CreateRootCommand(ctx context.Context, input *Input, version string) *cobra.Command {
 	rootCmd := &cobra.Command{
 		Use:               "act [event name to run] [flags]\n\nIf no event name passed, will default to \"on: push\"\nIf actions handles only one event it will be used as default instead of \"on: push\"",
 		Short:             "Run GitHub actions locally by specifying the event name (e.g. `push`) or an action name directly.",
