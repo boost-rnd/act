@@ -46,7 +46,7 @@ var exitFunc = os.Exit
 // Execute is the entry point to running the CLI
 func Execute(ctx context.Context, version string) {
 	input := new(Input)
-	rootCmd := createRootCommand(ctx, input, version)
+	rootCmd := CreateRootCommand(ctx, input, version)
 
 	if err := rootCmd.Execute(); err != nil {
 		exitFunc(1)
