@@ -388,6 +388,8 @@ func (rc *RunContext) startJobContainer() common.Executor {
 			jobContainerNetwork = networkName
 		} else if jobContainerNetwork == "" {
 			jobContainerNetwork = "host"
+		} else if jobContainerNetwork == "container" {
+			jobContainerNetwork = string(rc.Config.ContainerNetworkMode)
 		}
 
 		rc.JobContainer = container.NewContainer(&container.NewContainerInput{
